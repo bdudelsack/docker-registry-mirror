@@ -1,0 +1,36 @@
+hash: 829ae5ee451bd6cac6fca3cebd1e6f8b307a0cc065b2a3281edc70e084d73e43
+updated: 2017-03-16T16:17:20.619819461+01:00
+imports:
+- name: github.com/bdudelsack/docker-registry-client
+  version: cec95bc7a5c1b4a9323acff4b61b7fa03b2fdb89
+  subpackages:
+  - registry
+- name: github.com/docker/distribution
+  version: 99cb7c0946d2f5a38015443e515dc916295064d7
+  subpackages:
+  - context
+  - digest
+  - manifest
+  - manifest/schema1
+  - manifest/schema2
+  - reference
+  - uuid
+- name: github.com/docker/libtrust
+  version: aabc10ec26b754e797f9028f4589c5b7bd90dc20
+- name: github.com/go-yaml/yaml
+  version: a3f3340b5840cee44f372bddb5880fcbc419b46a
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: 0a192a193177452756c362c20087ddafcf6829c4
+- name: github.com/Sirupsen/logrus
+  version: 3ec0642a7fb6488f65b06f9040adc67e3990296a
+- name: golang.org/x/net
+  version: a333c534c871727fb95745870e8b98a69447f2ce
+  subpackages:
+  - context
+- name: golang.org/x/sys
+  version: 99f16d856c9836c42d24e7ab64ea72916925fa97
+  subpackages:
+  - unix
+testImports: []

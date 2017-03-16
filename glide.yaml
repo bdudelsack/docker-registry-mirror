@@ -1,0 +1,6 @@
+package: .
+import:
+- package: github.com/bdudelsack/docker-registry-client
+- package: github.com/docker/distribution
+- package: github.com/docker/libtrust
+- package: github.com/go-yaml/yaml

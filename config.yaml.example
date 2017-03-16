@@ -1,0 +1,29 @@
+repositories:
+  - source: library/nginx
+    destination: registry.example.com/nginx
+    matches:
+      - ^1\.11(\.[0-9]+)?(-alpine)?$
+  - source: library/php
+    destination: registry.example.com/php
+    matches:
+      - ^7\.1\.2
+      - ^5\.6(-fpm)?$
+  - source: library/debian
+    destination: registry.example.com/debian
+    matches:
+      - ^jessie(-slim)?$
+      - ^latest$
+  - source: quay.io/coreos/hyperkube
+    destination: registry.example.com/hyperkube
+    matches:
+      - ^v1\.(5|6)\.[0-9]+_coreos\.[0-9]+$
+auth:
+  registry.example.com:
+    username: myusername
+    password: mypassword
+  registry.hub.docker.com:
+    username: myusername
+    password: mypassword
+  quay.io:
+    username: myusername
+    password: mypassword
