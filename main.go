@@ -86,7 +86,7 @@ func syncRepository(source string, destination string, matches []string) error {
 	}
 
 	for _, t := range sourceTags {
-		sourceDigest, err := sourceRegistry.ManifestDigest(sourceRepository, t)
+		sourceManifest, sourceDigest, err := sourceRegistry.ManifestWithDigest(sourceRepository, t)
 
 		fmt.Printf("%s:%s -- ", sourceRepository, t)
 
@@ -94,16 +94,10 @@ func syncRepository(source string, destination string, matches []string) error {
 			return err
 		}
 
-		targetDigest, err := targetRegistry.ManifestDigest(targetRepository, t)
+		_, targetDigest, err := targetRegistry.ManifestWithDigest(targetRepository, t)
 
 		if err != nil || targetDigest != sourceDigest {
 			fmt.Println("Downloading", sourceDigest.String())
-
-			sourceManifest, err := sourceRegistry.Manifest(sourceRepository, t)
-
-			if err != nil {
-				return err
-			}
 
 			for _, layer := range sourceManifest.FSLayers {
 
