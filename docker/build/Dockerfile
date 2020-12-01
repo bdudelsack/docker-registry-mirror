@@ -1,4 +1,4 @@
-FROM golang:1.8
+FROM golang:1.15
 
 COPY . /go/src/github.com/bdudelsack/docker-registry-mirror
 
