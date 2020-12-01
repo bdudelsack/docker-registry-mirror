@@ -38,12 +38,18 @@ auth:
     username: myusername
     password: mypassword
   quay.io:
-    username: myusername
-    password: mypassword
+    username: ${MY_USERNAME}
+    password: ${MY_PASSWORD}
 ```
 
 Run the docker container with mounted config file
 
 ```
-docker run -v $PWD/config.yaml:/config.yaml -v /etc/ssl/certs:/etc/ssl/certs bdudelsack/docker-registry-mirror
+docker run -v $PWD/config.yaml:/config.yaml bdudelsack/docker-registry-mirror
+```
+
+Specify credentials with environment variables
+
+```
+docker run -v $PWD/config.yaml:/config.yaml -e MY_USERNAME=username -e MY_PASSWORD=password bdudelsack/docker-registry-mirror
 ```

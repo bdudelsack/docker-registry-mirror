@@ -6,6 +6,7 @@ import (
 	"github.com/go-yaml/yaml"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -48,6 +49,8 @@ func readConfiguration() error {
 	if err != nil {
 		return err
 	}
+
+	buf = []byte(os.ExpandEnv(string(buf)))
 
 	if err := yaml.Unmarshal(buf, &config); err != nil {
 		return err
